@@ -8,12 +8,14 @@ o.ordersellingprice - o.ordercostprice as orderprofit,
 o.ordercostprice,
 o.ordersellingprice,
 --from customer
+c.customerid,
 c.customername,
 c.segment,
 c.country ,
 -- from product
-p.category ,
-p.productname ,
+p.productid,
+p.category,
+p.productname,
 p.subcategory
 from {{ ref('orders') }} as o
 left join {{ ref('customer') }} as c
